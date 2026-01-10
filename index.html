@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Photobooth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- MediaPipe Selfie Segmentation -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/selfie_segmentation.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Titan+One&display=swap');
+      
+      body {
+        font-family: 'Crimson Text', serif;
+        background-color: #f5f5f5;
+        color: #1a1a1a;
+        overscroll-behavior: none;
+      }
+      
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      
+      .sketch-border {
+        border: 3px solid #1a1a1a;
+        border-radius: 4px;
+        background: white;
+      }
+
+      /* New Bubbly Font Style matching the reference image */
+      .bubbly-text {
+        font-family: 'Titan One', cursive;
+        color: #ffffff;
+        -webkit-text-stroke: 2px #1a1a1a;
+        text-shadow: 4px 4px 0px #1a1a1a;
+        letter-spacing: 1px;
+      }
+
+      .bubbly-text-sm {
+        font-family: 'Titan One', cursive;
+        color: #ffffff;
+        -webkit-text-stroke: 1px #1a1a1a;
+        text-shadow: 2px 2px 0px #1a1a1a;
+        letter-spacing: 0.5px;
+      }
+
+      /* Wiggle Animation for Hand-Drawn Feel */
+      @keyframes wiggle {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(0.5deg); }
+        50% { transform: rotate(-0.5deg); }
+        75% { transform: rotate(0.2deg); }
+        100% { transform: rotate(0deg); }
+      }
+
+      .animate-wiggle {
+        animation: wiggle 2s infinite ease-in-out;
+      }
+      
+      .animate-wiggle-fast {
+        animation: wiggle 0.5s infinite ease-in-out;
+      }
+
+      /* Rough edges effect */
+      .rough-border {
+        box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

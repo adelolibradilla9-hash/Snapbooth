@@ -1,0 +1,8 @@
+{
+  "name": "Snapbooth",
+  "description": "Next-gen virtual photobooth with client-side AI background removal, AR filters, and instant sharing capabilities.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
