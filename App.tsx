@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { CameraBooth } from './components/CameraBooth.tsx';
 import { Button } from './components/Button.tsx';
@@ -38,28 +39,6 @@ const MOCK_STRIPS = [
           'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=400&h=300&fit=crop',
           'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=300&fit=crop',
           'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&h=300&fit=crop'
-      ]
-  },
-  { 
-      id: 4, 
-      user: '@yj.shinp', 
-      rotation: 'rotate-2', 
-      images: [
-          'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=300&fit=crop',
-          'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=300&fit=crop',
-          'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=300&fit=crop',
-          'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=300&fit=crop'
-      ]
-  },
-  { 
-      id: 5, 
-      user: '@danis.rewind', 
-      rotation: '-rotate-1', 
-      images: [
-          'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=300&fit=crop',
-          'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=300&fit=crop',
-          'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=300&fit=crop',
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=300&fit=crop'
       ]
   },
 ];
@@ -131,28 +110,17 @@ export default function App() {
              <div className="bg-yellow-50 p-3 border-2 border-black rounded-sm mb-2">
                 <h3 className="font-bold text-lg uppercase tracking-wide text-center">Data Collection and Storage</h3>
              </div>
-             
              <div>
                 <h4 className="font-bold text-red-500 mb-1 border-b-2 border-red-100 inline-block">What The Website Does NOT Store</h4>
                 <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                    <li><strong>Photos and Images:</strong> All photos taken through the photobooth are processed locally in your browser. It does not store, save, or transmit any of your photos to any servers/databases.</li>
-                    <li><strong>Personal Information:</strong> The website does not collect or store any personal information such as names, email addresses, or contact details.</li>
+                    <li><strong>Photos and Images:</strong> All photos taken are processed locally in your browser. It does not store or transmit any of your photos.</li>
                 </ul>
              </div>
-
              <div>
                 <h4 className="font-bold text-green-600 mb-1 border-b-2 border-green-100 inline-block">What The Website DOES Collect</h4>
                 <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                    <li><strong>Analytics Data:</strong> The website uses anonymous metrics to understand performance. No cookies are used and sessions are discarded automatically.</li>
+                    <li><strong>Anonymous Metrics:</strong> Basic anonymous usage data to improve performance.</li>
                 </ul>
-             </div>
-
-             <div>
-                <h4 className="font-bold text-blue-600 mb-1 border-b-2 border-blue-100 inline-block">How The Website Uses Your Data</h4>
-                <div className="space-y-2 text-gray-700">
-                    <p><span className="font-bold">Analytics:</span> The analytics data helps improve the website experience and performance.</p>
-                    <p><span className="font-bold">Local Processing:</span> All photo processing happens entirely in your browser - camera access and downloads are all handled locally on your device.</p>
-                </div>
              </div>
           </div>
         )
@@ -163,19 +131,11 @@ export default function App() {
            <div className="space-y-6 text-sm md:text-base font-['Crimson_Text']">
                <div>
                    <p className="font-bold text-lg mb-1">Q: How does the online photobooth work?</p>
-                   <p className="text-gray-700">A: Click "Enter" on the homepage, allow camera access when prompted, and follow the on-screen instructions to take your photos. The photobooth will guide you through the process and create a vintage-style photostrip that you can download instantly.</p>
+                   <p className="text-gray-700">A: Click "Enter", allow camera access, follow instructions to take 4 photos. We then generate a strip you can save.</p>
                </div>
                <div>
-                   <p className="font-bold text-lg mb-1">Q: Do I need to create an account or sign up?</p>
-                   <p className="text-gray-700">A: No! The photobooth is completely free to use and doesn't require any registration, account creation, or personal information. Just visit the site and start taking photos!</p>
-               </div>
-               <div>
-                   <p className="font-bold text-lg mb-1">Q: Are my photos stored or saved anywhere?</p>
-                   <p className="text-gray-700">A: No, your photos are never stored anywhere. All photo processing happens locally in your browser, and photos only exist on your device unless you choose to download them.</p>
-               </div>
-               <div>
-                   <p className="font-bold text-lg mb-1">Q: What devices and browsers are supported?</p>
-                   <p className="text-gray-700">A: The photobooth works on most modern devices including phones, tablets, and computers. It's compatible with Chrome, Safari, Firefox, and Edge browsers.</p>
+                   <p className="font-bold text-lg mb-1">Q: Are my photos stored?</p>
+                   <p className="text-gray-700">A: No. Everything happens in your browser on your device.</p>
                </div>
            </div>
         )
@@ -184,9 +144,8 @@ export default function App() {
         title: "About Me",
         body: (
             <div className="space-y-3 font-['Crimson_Text']">
-                <p>Hello! I'm Adele and I made this online photobooth just because I was interested in making one and had fun, so I hope you enjoyed using it as much as I did.</p>
-                <p>My father helped me on making this project. I did this project in my spare time so it is not in any means perfect but please shoot me a message me if you have any feedback!</p>
-                <p>I'm still adding new features and improving the website, feel free to follow me on <a href="https://instagram.com/itz.wdel" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-pink-600">@itz.wdel</a> on instagram!</p>
+                <p>Hello! I'm Adele. I made this online photobooth for fun.</p>
+                <p>Follow me on <a href="https://instagram.com/itz.wdel" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-pink-600">@itz.wdel</a> on instagram!</p>
             </div>
         )
       },
@@ -194,7 +153,7 @@ export default function App() {
         title: "Contact Me",
         body: (
             <div className="space-y-3 font-['Crimson_Text']">
-                <p>Got a suggestion, found a bug, or just want to say hi?</p>
+                <p>Got suggestions or bugs?</p>
                 <div className="bg-gray-100 p-4 rounded border-2 border-gray-200 mt-2">
                     <p className="font-bold text-sm text-gray-500 uppercase mb-1">Instagram</p>
                     <a href="https://instagram.com/itz.wdel" target="_blank" rel="noopener noreferrer" className="text-lg font-bold hover:text-pink-600 flex items-center gap-2">
@@ -209,10 +168,7 @@ export default function App() {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm" onClick={() => setActiveModal(null)}>
             <div className="bg-white sketch-border w-full max-w-md p-6 relative shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] max-h-[90vh] overflow-y-auto animate-wiggle" onClick={e => e.stopPropagation()}>
-                <button 
-                    onClick={() => setActiveModal(null)}
-                    className="absolute top-4 right-4 hover:scale-110 transition-transform bg-gray-100 rounded-full p-1 border-2 border-black z-10"
-                >
+                <button onClick={() => setActiveModal(null)} className="absolute top-4 right-4 hover:scale-110 transition-transform bg-gray-100 rounded-full p-1 border-2 border-black z-10">
                     <X className="w-4 h-4" />
                 </button>
                 <h2 className="text-2xl font-bold mb-4 font-['Titan_One'] tracking-wide">{content.title}</h2>
@@ -226,87 +182,28 @@ export default function App() {
 
   const LandingPage = () => (
       <div className="flex-1 flex flex-col items-center justify-center p-4">
-          
-          <button 
-              onClick={() => setScreen('home')}
-              className="mb-12 sketch-border bg-white px-8 py-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] animate-wiggle hover:scale-105 transition-transform active:scale-95"
-          >
-              <h1 className="text-5xl md:text-6xl text-center uppercase bubbly-text">
-                  SNAPBOOTH
-              </h1>
+          <button onClick={() => setScreen('home')} className="mb-12 sketch-border bg-white px-8 py-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] animate-wiggle hover:scale-105 transition-transform active:scale-95">
+              <h1 className="text-5xl md:text-6xl text-center uppercase bubbly-text">SNAPBOOTH</h1>
           </button>
-
-          {/* Main Content Area */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-32 animate-wiggle-fast z-10 mt-8 w-full max-w-4xl px-4">
-             
-             {/* Left Column: Strips Box + Label */}
-             <div 
-                className="flex flex-col items-center gap-6 relative group cursor-pointer" 
-                onClick={() => setScreen('gallery')}
-             >
-                 {/* The Box */}
+             <div className="flex flex-col items-center gap-6 relative group cursor-pointer" onClick={() => setScreen('gallery')}>
                  <div className="sketch-border bg-white w-40 h-52 flex items-center justify-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-20 relative transition-transform group-hover:scale-105 group-active:scale-95 duration-200">
                     <div className="flex gap-2 opacity-90">
-                        <div className="w-5 h-28 bg-gray-800 flex flex-col gap-1 p-0.5">
-                            <div className="bg-gray-600 flex-1"></div>
-                            <div className="bg-gray-600 flex-1"></div>
-                            <div className="bg-gray-600 flex-1"></div>
-                            <div className="bg-gray-600 flex-1"></div>
-                        </div>
-                        <div className="w-5 h-28 bg-gray-600 flex flex-col gap-1 p-0.5 mt-4">
-                             <div className="bg-gray-400 flex-1"></div>
-                             <div className="bg-gray-400 flex-1"></div>
-                             <div className="bg-gray-400 flex-1"></div>
-                             <div className="bg-gray-400 flex-1"></div>
-                        </div>
-                        <div className="w-5 h-28 bg-gray-400 flex flex-col gap-1 p-0.5">
-                             <div className="bg-gray-200 flex-1"></div>
-                             <div className="bg-gray-200 flex-1"></div>
-                             <div className="bg-gray-200 flex-1"></div>
-                             <div className="bg-gray-200 flex-1"></div>
-                        </div>
+                        <div className="w-5 h-28 bg-gray-800 flex flex-col gap-1 p-0.5"><div className="bg-gray-600 flex-1"></div><div className="bg-gray-600 flex-1"></div><div className="bg-gray-600 flex-1"></div><div className="bg-gray-600 flex-1"></div></div>
+                        <div className="w-5 h-28 bg-gray-600 flex flex-col gap-1 p-0.5 mt-4"><div className="bg-gray-400 flex-1"></div><div className="bg-gray-400 flex-1"></div><div className="bg-gray-400 flex-1"></div><div className="bg-gray-400 flex-1"></div></div>
+                        <div className="w-5 h-28 bg-gray-400 flex flex-col gap-1 p-0.5"><div className="bg-gray-200 flex-1"></div><div className="bg-gray-200 flex-1"></div><div className="bg-gray-200 flex-1"></div><div className="bg-gray-200 flex-1"></div></div>
                     </div>
                  </div>
-                 
                  <div className="relative mt-8">
-                     <div className="relative">
-                        <span className="bubbly-text-sm text-xl text-black leading-none block text-center group-hover:underline decoration-wavy underline-offset-4 decoration-2 px-4 py-2" style={{ color: '#1a1a1a', textShadow: 'none', WebkitTextStroke: '0px' }}>
-                            featured<br/>strips
-                        </span>
-                     </div>
-                     <svg className="absolute -top-8 left-1/2 -translate-x-1/2 w-8 h-8 text-black" viewBox="0 0 40 40" fill="none">
-                         <path d="M20,35 L 20,5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                         <path d="M20,5 L 14,12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                         <path d="M20,5 L 26,12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                     </svg>
+                     <span className="bubbly-text-sm text-xl text-black leading-none block text-center group-hover:underline decoration-wavy underline-offset-4 decoration-2 px-4 py-2" style={{ color: '#1a1a1a', textShadow: 'none', WebkitTextStroke: '0px' }}>featured<br/>strips</span>
                  </div>
              </div>
-
-             {/* Enter Button */}
-             <button 
-                onClick={() => setScreen('booth')}
-                className="bg-white sketch-border px-12 py-6 hover:bg-yellow-50 hover:scale-105 active:scale-95 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-10 whitespace-nowrap"
-             >
+             <button onClick={() => setScreen('booth')} className="bg-white sketch-border px-12 py-6 hover:bg-yellow-50 hover:scale-105 active:scale-95 transition-all shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-10 whitespace-nowrap">
                   <span className="bubbly-text-sm text-3xl text-black" style={{ color: '#1a1a1a', textShadow: 'none', WebkitTextStroke: '0px' }}>enter →</span>
              </button>
           </div>
-          
           <div className="mt-24 text-xs text-gray-500 font-mono flex items-center gap-1 font-['Crimson_Text']">
-              made by 
-              <a 
-                href="https://instagram.com/itz.wdel" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-1 font-bold hover:text-[#E1306C] transition-colors"
-              >
-                @itz.wdel <Instagram className="w-3 h-3" />
-              </a>
-          </div>
-          <div className="mt-4 flex gap-4 text-xs text-gray-400 underline decoration-gray-300 flex-wrap justify-center font-['Crimson_Text'] text-sm">
-              <button onClick={() => setActiveModal('privacy')} className="hover:text-black transition-colors">Privacy Policy</button>
-              <button onClick={() => setActiveModal('faq')} className="hover:text-black transition-colors">FAQ</button>
-              <button onClick={() => setActiveModal('about')} className="hover:text-black transition-colors">About Me</button>
-              <button onClick={() => setActiveModal('contact')} className="hover:text-black transition-colors">Contact Me</button>
+              made by <a href="https://instagram.com/itz.wdel" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 font-bold hover:text-[#E1306C] transition-colors">@itz.wdel <Instagram className="w-3 h-3" /></a>
           </div>
       </div>
   );
@@ -318,11 +215,7 @@ export default function App() {
              <button onClick={() => setScreen('home')} className="hover:scale-110 transition-transform active:scale-95">
                  <ArrowLeft className="w-8 h-8 md:w-10 md:h-10 text-[#1a1a1a]" strokeWidth={2.5} />
              </button>
-             <button className="hover:scale-110 transition-transform active:scale-95" onClick={() => alert("This is a gallery of community snaps!")}>
-                 <HelpCircle className="w-8 h-8 md:w-10 md:h-10 text-[#1a1a1a]" strokeWidth={2.5} />
-             </button>
           </div>
-
           <div className="flex-1 overflow-x-auto flex items-center justify-start md:justify-center gap-16 px-8 pb-8 scrollbar-hide w-full">
               {MOCK_STRIPS.map((strip) => (
                   <div key={strip.id} className={`flex-shrink-0 flex flex-col items-center gap-4 transform ${strip.rotation} hover:rotate-0 transition-transform duration-300 hover:scale-105 cursor-pointer group`}>
@@ -333,9 +226,7 @@ export default function App() {
                               </div>
                           ))}
                       </div>
-                      <a href={`https://instagram.com/${strip.user.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="font-['Crimson_Text'] text-sm md:text-base text-blue-600 hover:underline hover:text-blue-800">
-                          {strip.user}
-                      </a>
+                      <a href={`https://instagram.com/${strip.user.replace('@', '')}`} target="_blank" rel="noopener noreferrer" className="font-['Crimson_Text'] text-sm md:text-base text-blue-600 hover:underline hover:text-blue-800">{strip.user}</a>
                   </div>
               ))}
           </div>
@@ -360,48 +251,67 @@ export default function App() {
         return (
             <div className="flex-1 flex flex-col items-center justify-center bg-[#f5f5f5] p-4">
                  <div className="bg-white border-[3px] border-black p-6 mb-2 relative w-64 text-center z-20 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-                     <h2 className="font-bold text-[#1a3a5f] text-lg leading-tight tracking-wider font-['Crimson_Text']">
-                        PHOTOS<br/>DELIVERED<br/>HERE IN<br/>
-                        {Math.max(1, timeLeft)} SECOND{timeLeft !== 1 ? 'S' : ''}
-                     </h2>
+                     <h2 className="font-bold text-[#1a3a5f] text-lg leading-tight tracking-wider font-['Crimson_Text']">PHOTOS<br/>DELIVERED<br/>HERE IN<br/>{Math.max(1, timeLeft)} SECOND{timeLeft !== 1 ? 'S' : ''}</h2>
                  </div>
                  <div className="relative w-64 h-[500px] border-[3px] border-black bg-white rounded-md flex justify-center pt-8 overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                       <div className="w-48 h-full border-x-4 border-black relative bg-gray-50">
-                           <div className="w-full absolute -top-[450px] animate-[slideDown_2.8s_ease-out_forwards] flex justify-center p-2">
-                                <img src={capturedImage!} className="w-full shadow-lg border border-gray-200" alt="Printing..." />
-                           </div>
+                           <div className="w-full absolute -top-[450px] animate-[slideDown_2.8s_ease-out_forwards] flex justify-center p-2"><img src={capturedImage!} className="w-full shadow-lg border border-gray-200" alt="Printing..." /></div>
                       </div>
                  </div>
-                 <style>{`
-                    @keyframes slideDown {
-                        0% { top: -450px; }
-                        20% { top: -450px; }
-                        100% { top: 20px; }
-                    }
-                 `}</style>
+                 <style>{`@keyframes slideDown { 0% { top: -450px; } 20% { top: -450px; } 100% { top: 20px; } }`}</style>
             </div>
         );
     }
 
     return (
-        <div className="flex-1 flex flex-col items-center justify-center min-h-screen bg-[#f5f5f5] p-4 relative overflow-hidden">
-            <div className="relative flex items-center justify-center w-full max-w-4xl py-8">
-                <div className="relative z-10 shadow-[8px_8px_15px_rgba(0,0,0,0.15)] rotate-1 transition-transform hover:rotate-0 duration-300">
-                    <img src={capturedImage!} alt="Final Strip" className="h-[60vh] md:h-[65vh] w-auto object-contain bg-white" />
+        <div className="flex-1 flex flex-col items-center justify-center min-h-screen bg-white p-4 relative overflow-y-auto">
+            {/* Background Decorative Elements */}
+            <div className="absolute top-10 right-[15%] md:right-[30%] flex flex-col items-center rotate-12 pointer-events-none">
+                 <span className="font-['Titan_One'] text-xl md:text-2xl text-black">your<br/>photostrip!</span>
+                 <svg className="w-12 h-12 -scale-x-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                     <path d="M7 7c0 0 10 0 10 10" strokeLinecap="round" strokeLinejoin="round" />
+                     <path d="M13 17h4v-4" strokeLinecap="round" strokeLinejoin="round" />
+                 </svg>
+            </div>
+
+            <div className="absolute bottom-20 left-[10%] md:left-[25%] flex flex-col items-center gap-2">
+                 <div className="flex flex-col items-center pointer-events-none">
+                    <span className="font-['Titan_One'] text-lg text-black mb-1">tag me :)</span>
+                    <svg className="w-8 h-8 mb-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M17 17l-5 5-5-5M12 22V10" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                 </div>
+                 <div className="flex flex-col gap-4">
+                     <a href="https://instagram.com/itz.wdel" target="_blank" rel="noopener noreferrer" className="hover:scale-110 transition-transform active:scale-95">
+                         <Instagram className="w-10 h-10 text-black" />
+                     </a>
+                 </div>
+            </div>
+
+            <div className="absolute bottom-10 right-[10%] md:right-[25%] pointer-events-none">
+                 <Scissors className="w-16 h-16 text-black rotate-[150deg]" />
+            </div>
+
+            {/* Main Strip Review */}
+            <div className="relative flex items-center justify-center w-full max-w-4xl py-12 z-10">
+                <div className="relative shadow-[15px_15px_30px_rgba(0,0,0,0.2)] rotate-1 transition-transform hover:rotate-0 duration-300 sketch-border overflow-hidden">
+                    <img src={capturedImage!} alt="Final Strip" className="h-[65vh] md:h-[75vh] w-auto object-contain bg-white" />
                 </div>
             </div>
-            <div className="mt-6 flex flex-wrap justify-center gap-3 md:gap-6 z-30 w-full max-w-4xl px-4 font-['Crimson_Text']">
+
+            {/* Actions Bar */}
+            <div className="mt-8 flex flex-wrap justify-center gap-3 md:gap-6 z-30 w-full max-w-4xl px-4 font-['Crimson_Text']">
                 <button onClick={downloadImage} className="border-[2px] border-[#1a1a1a] bg-white px-4 md:px-6 py-2 md:py-3 min-w-[120px] flex items-center justify-center gap-2 hover:bg-gray-50 transition-all font-bold text-[#1a1a1a] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none">
-                    <Download className="w-4 h-4 md:w-5 md:h-5" /> <span>download</span>
+                    <Download className="w-4 h-4 md:w-5 md:h-5" /> <span className="text-sm md:text-base">download</span>
                 </button>
                 <button onClick={handleShare} className="border-[2px] border-[#1a1a1a] bg-white px-4 md:px-6 py-2 md:py-3 min-w-[120px] flex items-center justify-center gap-2 hover:bg-gray-50 transition-all font-bold text-[#1a1a1a] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none">
-                    <Share className="w-4 h-4 md:w-5 md:h-5" /> <span>share</span>
+                    <Share className="w-4 h-4 md:w-5 md:h-5" /> <span className="text-sm md:text-base">share</span>
                 </button>
                 <button onClick={handlePrint} className="border-[2px] border-[#1a1a1a] bg-white px-4 md:px-6 py-2 md:py-3 min-w-[120px] flex items-center justify-center gap-2 hover:bg-gray-50 transition-all font-bold text-[#1a1a1a] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none">
-                    <Printer className="w-4 h-4 md:w-5 md:h-5" /> <span>print</span>
+                    <Printer className="w-4 h-4 md:w-5 md:h-5" /> <span className="text-sm md:text-base">print</span>
                 </button>
                 <button onClick={() => { setCapturedImage(null); setScreen('booth'); }} className="border-[2px] border-[#1a1a1a] bg-white px-4 md:px-6 py-2 md:py-3 min-w-[120px] flex items-center justify-center gap-2 hover:bg-gray-50 transition-all font-bold text-[#1a1a1a] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-y-1 active:shadow-none">
-                    <RotateCcw className="w-4 h-4 md:w-5 md:h-5" /> <span>restart</span>
+                    <RotateCcw className="w-4 h-4 md:w-5 md:h-5" /> <span className="text-sm md:text-base">restart</span>
                 </button>
             </div>
         </div>
@@ -413,12 +323,7 @@ export default function App() {
       <main className="flex-1 flex flex-col relative">
         {screen === 'home' && <LandingPage />}
         {screen === 'gallery' && <GalleryPage />}
-        {screen === 'booth' && (
-          <CameraBooth 
-            onCapture={handleCapture}
-            onCancel={() => setScreen('home')}
-          />
-        )}
+        {screen === 'booth' && <CameraBooth onCapture={handleCapture} onCancel={() => setScreen('home')} />}
         {screen === 'review' && capturedImage && <ReviewPage />}
         {activeModal && <InfoModal />}
       </main>
